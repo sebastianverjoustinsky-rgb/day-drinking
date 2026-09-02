@@ -4,79 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Do you like day drinking?</title>
-<meta name="description" content="You have been considered for an invitation.">
-
-<!-- social preview -->
 <meta property="og:title" content="Do you like day drinking?">
-<meta property="og:description" content="You have been considered for an invitation.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f4a03c">
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍹</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- the sun, sitting behind everything -->
-<div class="sky" aria-hidden="true">
-  <div class="sun"></div>
-  <div class="haze"></div>
-</div>
-
 <main id="stage">
 
-  <!-- ── 1 ── the question ───────────────────────────── -->
   <section class="screen is-active" data-screen="question">
-    <p class="eyebrow">A single question</p>
-    <h1 class="display">Do you like<br><em>day drinking?</em></h1>
+    <p>Do you like day drinking?</p>
     <div class="choices">
-      <button class="btn btn-yes" data-go="invite">Yes</button>
-      <button class="btn btn-no"  data-go="reconsider">No</button>
+      <button data-go="invite">Yes</button>
+      <button data-go="reconsider">No</button>
     </div>
   </section>
 
-  <!-- ── 2 ── the invitation ─────────────────────────── -->
   <section class="screen" data-screen="invite">
-    <p class="eyebrow">Congratulations, sort of</p>
-    <h2 class="serif">You have been <em>considered</em> for an invitation to my twenty third birthday celebration.</h2>
+    <p>You have been considered for an invitation to my twenty third birthday celebration.</p>
     <div class="choices">
-      <button class="btn btn-yes" data-go="details">Continue</button>
+      <button data-go="details">Continue</button>
     </div>
   </section>
 
-  <!-- ── 3 ── the details (filled in from script.js) ─── -->
+  <!-- ── the details. edit the text below. ── -->
   <section class="screen" data-screen="details">
-    <p class="eyebrow">You're in</p>
-    <h2 class="display small">The <em>details</em></h2>
-    <dl class="details" id="details"></dl>
-    <p class="rsvp-note" id="rsvp-note"></p>
-    <div class="choices">
-      <a class="btn btn-yes" id="rsvp-btn" hidden>RSVP</a>
-      <button class="btn btn-ghost" data-copy>Copy the link</button>
-    </div>
+    <dl>
+      <dt>When</dt>  <dd>Saturday 19 September 2026</dd>
+      <dt>Time</dt>  <dd>12</dd>
+      <dt>Where</dt> <dd>Cremorne Point</dd>
+    </dl>
   </section>
 
-  <!-- ── 4 ── reconsider ─────────────────────────────── -->
   <section class="screen" data-screen="reconsider">
-    <p class="eyebrow">Hm.</p>
-    <h2 class="display small">Would you like to <em>reconsider</em><br>your choice?</h2>
+    <p>Would you like to reconsider your choice?</p>
     <div class="choices">
-      <button class="btn btn-yes" data-go="question">Yes</button>
-      <button class="btn btn-no"  data-go="rejected">No</button>
+      <button data-go="question">Yes</button>
+      <button data-go="rejected">No</button>
     </div>
   </section>
 
-  <!-- ── 5 ── the door ───────────────────────────────── -->
   <section class="screen" data-screen="rejected">
-    <p class="eyebrow">Final answer accepted</p>
-    <h2 class="display small">You are <em>not</em> invited.</h2>
-    <p class="footnote">This decision is final and was, frankly, made by you.</p>
-    <div class="choices">
-      <button class="btn btn-ghost" data-go="question">Grovel</button>
-    </div>
+    <p>You are not invited.</p>
   </section>
 
 </main>
