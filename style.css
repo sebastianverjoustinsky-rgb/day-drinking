@@ -17,6 +17,9 @@
 
 * { box-sizing: border-box; }
 
+/* author styles outrank the UA sheet, so [hidden] needs saying out loud */
+[hidden] { display: none !important; }
+
 html, body { height: 100%; }
 
 body {
@@ -111,9 +114,6 @@ body {
   pointer-events: auto;
   transition-delay: 90ms, 90ms, 90ms, 0s;
 }
-
-/* keep the outgoing screen painted while it fades */
-.screen.is-leaving { visibility: visible; }
 
 /* ── type ─────────────────────────────────────────────────── */
 

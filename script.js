@@ -72,13 +72,9 @@ function show(name) {
   const next = document.querySelector(`[data-screen="${name}"]`);
   if (!next || next.classList.contains("is-active")) return;
 
-  for (const s of screens) {
-    if (s === next) continue;
-    if (!s.classList.contains("is-active")) continue;
-    s.classList.remove("is-active");
-    s.classList.add("is-leaving");
-    s.addEventListener("transitionend", () => s.classList.remove("is-leaving"), { once: true });
-  }
+  // the base .screen rule delays `visibility` by the fade duration, so the
+  // outgoing screen stays painted while it fades and then stops taking clicks
+  for (const s of screens) if (s !== next) s.classList.remove("is-active");
 
   // the door gets its own, colder weather
   document.body.classList.toggle("is-rejected", name === "rejected");
