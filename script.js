@@ -3,7 +3,6 @@ const trail = [];
 
 function render(next) {
   for (const s of screens) s.classList.toggle("is-active", s === next);
-  // nothing behind us on a fresh load, so don't offer a way back
   for (const b of next.querySelectorAll("[data-back]")) b.hidden = trail.length === 0;
   requestAnimationFrame(() => next.querySelector("button:not([hidden])")?.focus({ preventScroll: true }));
 }
