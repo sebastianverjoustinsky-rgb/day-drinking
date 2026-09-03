@@ -52,12 +52,15 @@ button {
   border: 0;
   background: none;
   font: inherit;
-  color: inherit;
+  color: blue;
   text-decoration: underline;
   cursor: pointer;
 }
 
-button:hover { text-decoration: none; }
+button:hover { 
+  text-decoration: none;
+color: red;
+}
 button:focus-visible { outline: 1px solid #000; outline-offset: 4px; }
 
 dl {
